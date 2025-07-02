@@ -1,0 +1,161 @@
+*
+{
+    margin:0;
+    padding:0;  /*margin and padding: 0 are usually set in every css file in starting to get a clean slate.*/
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.main_box
+{
+    background: url("photo.jpg");
+    height:100vh;  /*height = 100% of viewport*/
+    background-size:cover;
+}
+
+.btn_one
+{
+    color:white;
+    font-size:35px;
+    font-weight:750;
+    /* position:absolute; */
+    display:inline-block;
+    cursor: pointer;
+}
+
+.sidebar_menu
+{
+    position:fixed;
+    left:-300px;  /*to show that after checking the checkbox the sidebar will open*/
+    height:100vh;   /*to give the sidebar_menu complete height*/
+    width:300px;
+    background-color:rgb(37, 37, 37) ;
+    box-shadow: 0 0 5px rgb(120, 119, 119) 
+}
+
+.sidebar_menu .logo 
+{
+    position:absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow:0 0 4px rgb(113, 110, 110);
+    height: 60px;
+}
+
+.sidebar_menu .logo a
+{
+    position: absolute;
+    left:50px;
+    color:white;
+    text-decoration:none ;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sidebar_menu .btn_two
+{
+   color: grey;
+   font-size: 40px;
+   line-height:25px;
+   position:absolute;
+   left: 265px;
+   top:7px;
+   /* opacity: 0; */
+   cursor: pointer;  /*to change cursor */
+}
+
+.sidebar_menu .menu 
+{
+    position:absolute;
+    width:100%;
+    top:100px;
+    
+}
+
+.sidebar_menu .menu li
+{
+    margin-top: 5px;
+    padding: 5px 20px;
+}
+
+.sidebar_menu .menu i, a
+{
+    color:white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.sidebar_menu .menu i
+{
+    padding-right: 10px;
+}
+
+.sidebar_menu .social_media
+{
+    
+    position:absolute;
+    left:25%;
+    top:85%;
+}
+
+.sidebar_menu .social_media i
+{
+    opacity:0.6;
+    margin-left:5px;
+    padding:0 5px;
+}
+
+#check
+{
+    display:none;
+}
+
+.sidebar_menu .menu li:hover
+{
+    box-shadow: 0 0 10px rgb(120, 119, 119) ;
+    font-size:25px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    cursor: pointer;  /*to change the cursor*/
+}
+
+
+
+.sidebar_menu .social_media i:hover
+{
+    text-shadow: 0 0 5px rgb(225, 222, 222);
+    font-size:20px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.btn_one:hover
+{
+    font-size:40px;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.btn_two:hover
+{
+    text-shadow:0 0 5px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+#check:checked ~ .sidebar_menu
+{
+    left:0;
+}
+
+#check:checked ~ .btn_one
+{
+    opacity:0;
+}
+
+.sidebar_menu 
+{
+    transition:1s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Delta Web Dev</title>
+        </head>
+ <body>
+        <p>Hello World</p>
+        <!-- LISTS IN HTML -->
+        <h2>Lists In HTML</h2>
+        <h3>Unorderd List</h3>
+        <ul>
+            <li>Ashutosh</li>
+            <li>Yashraj</li>
+            <li>Saurabh</li>
+        </ul>
+        <h3>Ordered List</h3>
+        <ol>
+            <li>Ashutosh</li>
+            <li>Yashraj</li>
+            <li>Saurabh</li>
+        </ol>
+        <ol type="A">
+            <li>Ashutosh</li>
+            <li>Yashraj</li>
+            <li>Saurabh</li>
+        </ol>
+        <ol type="i">
+            <li>Ashutosh</li>
+            <li>Yashraj</li>
+            <li>Saurabh</li>
+        </ol>
+        <!--Anchor Elements-->
+        <a href="https://open.spotify.com/"><b>Spotify</b></a><br>
+        <!--Image Tag-->
+        <img src="Tony Stark.jpeg" alt="Tony Stark" height="250" width="190"> 
+        <!-- DIV ELEMENT (used as a container and make block element) -->
+        <div>
+            <a href="www.google.com">Google</a>
+        </div> 
+        <!-- SPAN ELEMENT -->
+        <span>
+            <a href="google.com">Google</a>
+        </span>
+        <!-- HR tag (horizontal rule) -->
+        <p>I am Tushar Mishra.</p>
+        <p>I am an engineering student.</p>
+        <p>I love to do coding.</p><hr>            
+        <!-- Sub/Sup tags -->
+        <p>Chemical formula of water is H<sub>2</sub>O.</p>
+        <p>A square is written as A<sup>2</sup> in Mathematics.</p><hr>
+
+
+
+        <!-- Tables In HTML -->
+        <h2>Tables In HTML</h2>
+        <!-- 1st Table -->
+        <h3>Example 1</h3>
+        <table>
+            <caption>Food Menu</caption>
+            <!-- Table header -->
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody>
+                <tr>
+                    <td>Frooti</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Samosa</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Chips</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table><br>
+        <!-- 2nd Table -->
+        <h3>Example 2</h3>
+        <table>
+            <caption>Food Menu</caption>
+            <tr>
+                <th rowspan="2">Item</th>
+                <th colspan="2">Price</th>
+            </tr>
+            <tr>
+                <th>INR</th>
+                <th>USD</th>
+            </tr>
+            <tr>
+                <td>Frooti</td>
+                <td>10</td>
+                <td>0.14</td>
+            </tr>
+            <tr>
+                <td>Samosa</td>
+                <td>12</td>
+                <td>0.17</td>
+            </tr>
+            <tr>
+                <td>Chips</td>
+                <td>20</td>
+                <td>0.28</td>
+            </tr>
+        </table><br>
+        <!-- 3rd Table -->
+        <h3>Example 3</h3>
+        <table border="black">
+            <caption>A test table with merged cells</caption>
+            <tr>
+                <td rowspan="2"></td>
+                <td colspan="2">Average</td>
+                <td rowspan="2">Red eyes</td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td>Weight</td>
+            </tr>
+            <tr>
+                <td>Males</td>
+                <td>1.9</td>
+                <td>0.003</td>
+                <td>40%</td>
+            </tr>
+            <tr>
+                <td>Females</td>
+                <td>1.7</td>
+                <td>0.002</td>
+                <td>43%</td>
+            </tr>
+        </table><hr>
+
+
+
+        <!-- Forms In HTML -->
+        <h2>Forms In HTML</h2>
+        <form action="/action">
+            <label for="Username">Username</label>
+            <input type="text" id="Username" placeholder="Enter Username" name="user">
+            <br><br>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" placeholder="Enter Password" name="pass">
+            <br><br>
+            <label for="Number">Number</label>
+            <input type="number"id ="Number" placeholder="Enter Number" name="num">
+            <br><br>
+            <label for="Time">Time</label>
+            <input type="time" id="Time" placeholder="Enter Time" name="time">
+            <br><br>
+            <label for="Color">Color</label>
+            <input type="color" id="Color" placeholder="Enter Color" name="color">
+            <br><br>
+            <!-- Button Element -->
+            <h3>Button Element</h3>
+            <button type="submit">Submit</button>
+            <button type="button">Do something</button>
+            <button type="reset">Reset</button>
+        </form><hr><br>
+        <!-- Practice que. -->
+        <h3>Practice question</h3><p>(connecting form input to google search)</p>
+        <form action="https://www.google.com/search">
+            <label for="search">Search on Google</label>
+            <input type="text" id="search" placeholder="Search on Google" name="q">
+            <button>Search</button>
+        </form><br>
+        <!-- Checkbox -->
+        <h3>Checkbox</h3>
+        <form action="/sever">
+            <label for="check">I am 18+</label>
+            <input type="checkbox" id="check" placeholder="check" name="check" value="18" checked>
+            <button>Submit</button>
+        </form>
+        <!-- Radio Button -->
+        <h3>Radio</h3>
+        <form action="/server">
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="q" value="Male">
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="q" value="Female">
+            <label for="others">Others</label>
+            <input type="radio" id="others" name="q" value="others">
+            <button>Submit</button>
+        </form> <hr>
+        <!-- Dropdown -->
+        <h3>Dropdown</h3>
+        <form action="/server">
+            <label for="profession">Profession</label>
+            <select name="profession" id="profession">
+                <option>Select your option</option>
+                <option value="stud">Student</option>
+                <option value="Dev">Developer</option>
+            </select>
+            <button>Submit</button>
+        </form><hr>
+        <!-- Range -->
+        <h3>Range</h3>
+        <form action="server">
+            <label for="vol">Select volume</label>
+            <input type="range" id="vol" name="vol" min="0" max="100" step="10" value="70">
+            <button>Submit</button>
+        </form><hr>
+        <!-- Textarea -->
+        <h3>Textarea</h3>
+        <label for="feedbck">Give your Feedback</label>
+        <textarea id="feedbck" value="feedbck" placeholder="Give your valuable feedback"></textarea>
+ </body>
+</html>

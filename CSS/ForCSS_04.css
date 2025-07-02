@@ -1,0 +1,35 @@
+div {
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    margin:0 auto;
+    /* Transition time */
+    transition:margin-top border-radius 2s ease-in 0.2s;
+    transition-duration: 2s;
+    transition-delay:0.5s;
+
+    /* Box Shadow */
+    box-shadow:5px 5px 10px rgb(255, 0, 0);
+
+    /* Background image */
+    background-image:url("Tony Stark.jpeg");
+    background-size: cover;
+}
+
+/* For Hovering */
+div:hover 
+{
+    background-color: rgb(72, 233, 126);
+    /* changing  shape*/
+    border-radius: 50%;
+    /* CSS transform */
+    margin-top:200px;
+    transform:rotate(45deg);
+    transform:scale(0.5);
+    transform:translate(150px, 150px);
+    transform:skew(25deg);
+    /* Above four lines can also be written as 
+    transform:rotate(45deg) scale(0,5) translate(150px, 150px) skew(25deg) */
+
+    box-shadow: 5px 5px 10px blue;
+}

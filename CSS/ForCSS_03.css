@@ -1,0 +1,66 @@
+/* Box Model */
+/* Height and width */
+div
+{
+    height: 100px;
+    width: 160px;
+    background-color: darksalmon;
+}
+/* Border */
+div
+{
+    border-width: 5px;
+    border-style: solid;
+    border-color:rgb(11, 12, 11);
+}  
+/* Border shorthand */ 
+h1
+{
+    border: 5px solid rgb(0, 255, 153);
+}
+/* Border slides */
+button
+{
+    border-left:5px solid red;
+    border-top:5px solid green;
+    border-right:5px solid blue;
+}
+/* Border Radius */
+div
+{
+    /* border-radius:20px;  */
+    border-top-right-radius:15px;
+    border-bottom-left-radius: 15px;
+}
+/* Padding */
+div
+{
+    padding-left:30px;
+    padding-right: 30px;
+    padding-top:30px;
+    padding-bottom:30px; 
+} 
+/* Margin */
+div
+{
+    margin:10px ;
+}
+body
+{
+    margin:15px;
+}
+
+/* To bring the divs in the same line */
+/* div
+{ 
+    display: inline-block;
+} */
+
+/* #one
+{
+    margin: 50%;
+}
+#two
+{
+    margin:50%;
+} */

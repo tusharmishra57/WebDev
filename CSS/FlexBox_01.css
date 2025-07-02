@@ -1,0 +1,49 @@
+#container1
+{
+    height:300px;
+    width:80%;
+    background-color: aliceblue;
+    margin: 0 auto;
+    border:3px solid black;
+
+    /* FlexBox property */
+    display:flex;
+    flex-direction: column;  
+}
+
+h1
+{
+    text-align:center;
+}
+
+#container1 div
+{
+    height:100px;
+    width:400px;
+    color:black;
+    text-align:center;
+}
+
+
+
+/* For flexbox 2 */
+#container2
+{
+    height:300px;
+    width:80%;
+    background-color: aliceblue;
+    margin: 0 auto;
+    border:3px solid black;
+
+    /* FlexBox property */
+    display:flex;
+    flex-direction: row;  /*default*/
+}
+
+#container2 div
+{
+    height:100px;
+    width:400px;
+    color:black;
+    text-align:center;
+} 

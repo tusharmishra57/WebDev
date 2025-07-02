@@ -1,0 +1,23 @@
+.top-nav
+{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 1px 2px #eee;
+}
+
+.logo
+{
+
+}
+
+.menu
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.img
+{
+  height: 312px;
+  width: 743px;
+}

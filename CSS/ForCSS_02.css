@@ -1,0 +1,113 @@
+/* Universal selector */
+*
+{
+    font-family: "Courier New";
+}
+
+h1, h3
+{
+    color:#b92b27;
+}
+
+/* ID Selector */
+#login  /*(an id in html file) */
+{
+    background-color: aliceblue;
+}
+ 
+#signup 
+{
+    background-color: #b92b27;
+    color: white;
+} 
+
+/* Class Selector */
+.upvote
+{
+    background-color: rgb(45, 169, 45);
+    color:white;
+}
+
+/* Descendent selector */
+p a
+{
+    color:blueviolet;
+}
+
+/* Adjacent Sibling Combinator */ 
+p + h3
+{
+    text-decoration:  underline;
+}
+.upvote + button
+{
+    background-color: cornflowerblue;
+}
+
+/* Child Combinator */
+div>input
+{
+    background-color:darksalmon ;
+}
+
+/* Attribute Selector : Applies on att="value".*/
+input[type="text"]
+{
+    color:#17d16b;
+}
+input[type="password"]
+{
+    color:rgb(216, 19, 19);
+}
+input[type]
+{
+    background-color: ghostwhite;
+}
+
+
+
+/* Pseudo Class */
+/* :hover */
+button:hover
+{
+    background-color: black;
+    color:aliceblue;
+}
+p+h3:hover
+{
+    text-decoration: overline;
+}
+/* :active (changes on clicking)*/
+button:active
+{
+    background-color: rgb(3, 255, 171);
+    color:rgb(105, 98, 98);
+}
+p:active
+{
+    font-weight:bold;
+} 
+/* checked (changes after checking) */
+#yes:checked+label
+{
+    color:#17d16b;
+    font-weight:bold;
+}
+#no:checked+label
+{
+    color:#b92b27;
+    font-weight: bold;
+}
+
+
+/* Pseudo Elements */
+/* first-letter */
+h1::first-letter
+{
+    color:black;
+}
+/* selection */
+p::selection
+{
+    background-color: burlywood;
+}

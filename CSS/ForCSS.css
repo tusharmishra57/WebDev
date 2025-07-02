@@ -1,0 +1,36 @@
+h1
+{
+    color:black;
+    background-color: aquamarine;
+    text-align:center;
+    font-weight: 900;
+    text-decoration: rgb(231, 8, 8) wavy underline;
+}
+
+h3
+{
+    color:rgb(61, 5, 244);
+    text-align: left;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+p
+{ 
+    color:antiquewhite;
+    background-color:cadetblue;
+    text-align: left;
+    font-weight: 200;
+    line-height: 1.5;
+    font-family: Arial;
+}
+
+button
+{
+    color:rgb(0, 0, 0);
+    background-color: yellow;
+    text-align:right;
+    font-weight: 200;
+    text-decoration: overline;
+    letter-spacing: 5px;
+}  

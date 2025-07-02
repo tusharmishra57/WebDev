@@ -1,0 +1,24 @@
+div
+{
+    height:300px;
+    width:300px;   
+    border: 2px solid black;
+    background-color:aqua;
+    color:black;
+    text-align:center;
+    align-content: center;
+
+    animation-name:Animation1;
+    animation-duration:1.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+/* Creating template for Animation */
+@keyframes Animation1
+{
+    from{font-size: 20px;}
+    to{font-size: 30px;}
+}
