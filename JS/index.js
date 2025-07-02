@@ -1,20 +1,84 @@
-const rect1 = 
+// function random(resolve)
+// {
+//     setTimeout(resolve, 3000);
+// }
+
+
+
+// let p = new Promise(random);
+
+// // console.log(p);
+
+
+// function callback()
+// {
+//     console.log("promise succeded");
+// }
+
+// p.then(callback);
+
+
+
+
+
+
+
+//Creating your own promise class --> 
+
+
+
+function random()
 {
-    height: 2,
-    width: 3
+    function resolve()
+    {
+        setTimeout(resolve, 2000);
+    }
 }
 
-const rect2 = 
+// function callback()
+// {
+//     console.log("succeded");
+// }
+
+// function after(callback)
+// {
+//     callback();
+// }
+
+class abc
 {
-    a: 2,
-    b: 3
+    constructor(random)
+    {
+        this.random = random;
+    }
+
+    if(resolve)
+    {
+        function after()
+        {
+
+        }
+    }
+
+
+    callback()
+    {
+        console.log("succeded");
+    }
+
+    after(callback)
+    {
+        callback();
+    }
+
 }
 
 
+// function random1()
+// {
 
-function area(rect)
-{
-    return rect.width * rect.height;
-}
+// }
 
-console.log(area(rect2));
+let p = new abc(random);
+
+let result = p.after(callback);
