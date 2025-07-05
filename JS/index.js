@@ -1,84 +1,79 @@
-// function random(resolve)
+// const fs = require('fs');
+
+
+// function random(print)
 // {
-//     setTimeout(resolve, 3000);
+//     function print(err, data)
+//     {
+//         console.log(data);
+//     }
 // }
+
+
+// const data = fs.readFileSync('a.txt', 'utf-8', print);
 
 
 
 // let p = new Promise(random);
 
-// // console.log(p);
 
 
-// function callback()
-// {
-//     console.log("promise succeded");
-// }
-
-// p.then(callback);
-
-
-
-
-
-
-
-//Creating your own promise class --> 
-
-
-
-function random()
+function readFile(fileName)
 {
-    function resolve()
-    {
-        setTimeout(resolve, 2000);
-    }
+    return new Promise();
 }
 
-// function callback()
+const p = readFile("a.txt");
+
+function callback(contents)
+{
+    console.log(contents);
+}
+
+p.then(callback);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const fs = require('fs');
+
+// function random(print)
+// {
+//     function print(err, data)
+//     {
+//         console.log(data);
+//     }
+// }
+
+
+
+
+// let p = new Promise(random);
+
+
+// let data = fs.readFile('a.txt', 'utf-8', print);
+
+// function succed()
 // {
 //     console.log("succeded");
 // }
 
-// function after(callback)
-// {
-//     callback();
-// }
-
-class abc
-{
-    constructor(random)
-    {
-        this.random = random;
-    }
-
-    if(resolve)
-    {
-        function after()
-        {
-
-        }
-    }
-
-
-    callback()
-    {
-        console.log("succeded");
-    }
-
-    after(callback)
-    {
-        callback();
-    }
-
-}
-
-
-// function random1()
-// {
-
-// }
-
-let p = new abc(random);
-
-let result = p.after(callback);
+// p.then(console.log(succed));

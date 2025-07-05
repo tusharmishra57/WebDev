@@ -1,0 +1,37 @@
+.nav
+{
+    border-bottom: 1px solid #000000 ;
+    background-color: #000000;
+    color: aliceblue;
+}
+
+.top-nav
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.visual_studio
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.search
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tagline
+{
+    display: flex;
+    justify-content: center;
+}
+
+.option
+{
+    display: flex;
+    justify-content: space-between;
+}
