@@ -4,20 +4,20 @@
 // 3. logs hello there 5 seconds after step 2
 
 
-// setTimeout(function main()
-// {
-//     console.log("hi");
+setTimeout(function main()
+{
+    console.log("hi");
 
-//     setTimeout(function main2()
-// {
-//     console.log("hello");
+    setTimeout(function main2()
+{
+    console.log("hello");
 
-//     setTimeout(function main3()
-// {
-//     console.log("hello there");
-// }, 5000)
-// }, 3000)
-// }, 1000)
+    setTimeout(function main3()
+{
+    console.log("hello there");
+}, 5000)
+}, 3000)
+}, 1000)
 
 
 
