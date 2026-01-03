@@ -2,10 +2,7 @@
         const inputEl = document.querySelector("input");  //will give the html code for the first input tag of doucment
         console.log(inputEl);
 
-        function addToDo()
-        {
-            console.log(inputEl.value); //will give the value of first input element when function gets called.
-        }
+        
 
 
 //Updating Technique
@@ -23,3 +20,15 @@
         }
 
         setInterval(counter, 1000);
+
+//Adding Technique
+        function addToDo()
+        {
+            console.log(inputEl.value); //will give the value of first input element when function gets called.
+
+            const divEl = document.createElement("div");
+            divEl.innerHTML = inputEl.value;
+
+            const parentEl = document.getElementById("todo");
+            parentEl.appendChild(divEl);
+        }
