@@ -3,7 +3,7 @@
 //  l. GET - User can check how many kidneys they have and their health
 //  2. POST - User can add a new kidney
 //  3. PUT - User can replace a kidney, make it healthy
-//  4. DELETE - User can remove a kidney
+//  4. DELETE - User can remove an unhealthy kidney
 
 const express = require("express");
 const app = express();
@@ -66,6 +66,26 @@ app.put("/", function(req, res)
     }
     res.json({});  //need to send a res.json but no need to give any value or something.
 })
+
+
+//DELETE
+app.delete("/", function(req, res)
+{
+    var newKidneys = [];
+
+    for(var i=0; i< user[0].kidneys.length; i++)
+    {
+        if(user[0].kidneys[i].healthy)
+        {
+            newKidneys.push({
+                healthy: true
+            });
+        }
+    }
+    user[0].kidneys = newKidneys;
+    res.json({msg: "done"});
+})
+
 
 
 app.listen(3000);
