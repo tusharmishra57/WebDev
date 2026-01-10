@@ -52,8 +52,19 @@ app.post("/", function(req, res)
         healthy: isHealthy
     })
     res.json({
-        msg: "Done"
+        msg: "Done"   //we have to send a res.json otherwise the request will remain hung(keep loading)
     })
+})
+
+
+//PUT
+app.put("/", function(req, res)
+{
+    for(let i=0; i<user[0].kidneys.length; i++)
+    {
+        user[0].kidneys[i].healthy = true;  //all the unhealthy kidneys will set to healthy.
+    }
+    res.json({});  //need to send a res.json but no need to give any value or something.
 })
 
 
