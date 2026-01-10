@@ -69,8 +69,12 @@ app.put("/", function(req, res)
 
 
 //DELETE
-app.delete("/", function(req, res)
+
+
+    app.delete("/", function(req, res)
 {
+    if(isTheirAtLeastOneUnhealthyKidney())
+    {
     var newKidneys = [];
 
     for(var i=0; i< user[0].kidneys.length; i++)
@@ -84,8 +88,30 @@ app.delete("/", function(req, res)
     }
     user[0].kidneys = newKidneys;
     res.json({msg: "done"});
+    }
+    else
+{
+    res.status(411).json({
+        msg: "You have no unhealthy kidneys"
+    })
+}
 })
 
+
+
+
+function isTheirAtLeastOneUnhealthyKidney()
+{
+    let atLeastOneUnhealthyKidney = false;
+    for(let i=0; i< user[0].kidneys.length; i++)
+    {
+        if(!user[0].kidneys[i].healthy)
+        {
+            atLeastOneUnhealthyKidney = true;
+        }
+    }
+    return atLeastOneUnhealthyKidney;
+}
 
 
 app.listen(3000);
