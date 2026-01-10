@@ -18,7 +18,9 @@ const user =
     }]
 }];
 
+app.use(express.json())
 
+//GET
 app.get("/", function(req, res){
     const numberOfKidneys = user[0].kidneys.length
 
@@ -39,5 +41,20 @@ app.get("/", function(req, res){
         unhealthyKidneys,
     })
 })
+
+
+//POST
+app.post("/", function(req, res)
+{
+    console.log(req.body)
+    const isHealthy = req.body.isHealthy;
+    user[0].kidneys.push({
+        healthy: isHealthy
+    })
+    res.json({
+        msg: "Done"
+    })
+})
+
 
 app.listen(3000);
