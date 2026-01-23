@@ -18,6 +18,7 @@
   "homepage": "https://github.com/tusharmishra57/WebDev#readme",
   "description": "",
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.3"
   }
 }
