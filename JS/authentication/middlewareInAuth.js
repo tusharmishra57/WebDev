@@ -10,6 +10,11 @@ const users= [];
 
 //We don't need to create a getToken function
 
+//the html file will open when we hit the "/" localhost
+app.get("/", function(req, res){
+    res.sendFile(__dirname + "/index.html")
+})
+
 
 app.post("/signup", function(req, res){
     const username = req.body.username;
