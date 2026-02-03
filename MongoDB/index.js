@@ -44,20 +44,37 @@ app.post("/login", function(req, res){
     }
     else{
         res.status(403).json({
-            msg: "Invalid Credentials"
+            msg: "Incorrect Credentials"
         })
     }
 
 })
 
-app.post("/todo", function(req, res){
-    if(token){
+app.post("/todo",auth, function(req, res){
+    const userId = req.userId;
+    
+})
 
+app.get("/todos",auth, function(req, res){
+
+})
+
+function auth(req, res, next)
+{
+    const token = req.headers.token;
+    const decodedInformation = jwt.verify(token, JWT_SECRET);
+
+    if(decodedInformation)
+    {
+        req.userId = decodedInformation.id;
+        next();
     }
-})
-
-app.get("/todos", function(req, res){
-
-})
+    else
+    {
+        res.json({
+            msg: "Not logged in"
+        })
+    }
+}
 
 app.listen(3000);
