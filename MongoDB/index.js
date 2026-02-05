@@ -52,11 +52,24 @@ app.post("/login", function(req, res){
 
 app.post("/todo",auth, function(req, res){
     const userId = req.userId;
-    
+    const title = req.body.title;
+
+    TodoModel.create({
+        title,
+        userId
+    })
 })
 
-app.get("/todos",auth, function(req, res){
+app.get("/todos",auth, async function(req, res){
+    const userId = req.userId;
+    
+    const todos = await TodoModel.find({
+        userId: userId
+    })
 
+    res.json({
+        todos
+    })
 })
 
 function auth(req, res, next)
