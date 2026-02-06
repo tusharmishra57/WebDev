@@ -16,6 +16,8 @@ app.post("/signup", async function(req, res){
     const password = req.body.password;
     const name = req.body.name;
 
+    try
+    {
     const hashedPassword = await bcrypt.hash(password, 5);   //here 5 is the saltround
 
     await UserModel.create({
@@ -27,6 +29,15 @@ app.post("/signup", async function(req, res){
     res.json({
         msg: "You are Signed in"
     })
+    }
+
+    catch(error)
+    {
+        res.json({
+            msg: "User already exist"
+        })
+    }
+    
 
 })
 
