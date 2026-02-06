@@ -3,6 +3,8 @@ const {UserModel, TodoModel} = require("./db");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "abc123";
 
+const bcrypt = require("bcrypt");
+
 // mongoose.connect("url of the mongodb cloud where you have created the database cluster/Here you have to define a database where the users and todos get stored")
 
 const app = express();
@@ -14,9 +16,11 @@ app.post("/signup", async function(req, res){
     const password = req.body.password;
     const name = req.body.name;
 
+    const hashedPassword = await bcrypt.hash(password, 5);   //here 5 is the saltround
+
     await UserModel.create({
         email: email,
-        password: password,
+        password: hashedPassword,
         name: name
     });
 
@@ -26,17 +30,25 @@ app.post("/signup", async function(req, res){
 
 })
 
-app.post("/login", function(req, res){
+app.post("/login", async function(req, res){
 
     const email = req.body.email;
     const password = req.body.password;
 
-    const user = UserModel.findOne({
-        email: email,
-        password: password
+    const user = await UserModel.findOne({
+        email: email
     })
 
-    if(user)
+    if(!user)
+    {
+        res.json({
+            msg: "This email doesn't exist in the DB"
+        })
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if(passwordMatch)
     {
         const token = jwt.sign({
             id: user._id
