@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = "abc123";
 
 const bcrypt = require("bcrypt");
+const {z} = require("zod");
 
 // mongoose.connect("url of the mongodb cloud where you have created the database cluster/Here you have to define a database where the users and todos get stored")
 
@@ -15,6 +16,24 @@ app.post("/signup", async function(req, res){
     const email = req.body.email;
     const password = req.body.password;
     const name = req.body.name;
+
+    const requireBody = z.object({
+        email: z.string().min(3).max(100).email(),
+        name: z.string().min(3).max(100),
+        password: z.string().min(3).max(30)
+    })
+
+    // const parsedData = requireBody.parse(req.body);
+    const parsedDataWithSuccess = requireBody.safeParse(req.body);
+
+    if(!parsedDataWithSuccess.success)
+    {
+        res.json({
+            msg:"Incorrect Format",
+            error: parsedDataWithSuccess.error
+        })
+        return
+    }
 
     try
     {
