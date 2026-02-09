@@ -52,9 +52,20 @@ app.post("/signup", async function(req, res){
 
     catch(error)
     {
-        res.json({
+        if(error.code === 11000)
+        {
+            res.json({
             msg: "User already exist"
-        })
+            })
+        }
+
+        else
+        {
+            res.status(500).json({
+                msg:"Internal Error"
+            })
+        }
+        
     }
     
 
