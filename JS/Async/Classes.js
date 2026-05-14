@@ -7,7 +7,7 @@ class Recatangle
         this.color = color;
     }
 
-    area()
+    area()  //method
     {
         return this.width * this.height;
     }
@@ -15,7 +15,7 @@ class Recatangle
 
 }
 
-const rect = new Recatangle(4, 5, "red");
+const rect = new Recatangle(4, 5, "red"); //rect is the instance
 
 const area = rect.area();
 console.log(area); 
