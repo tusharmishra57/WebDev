@@ -43,11 +43,11 @@ app.post("/signin", function(req, res){
     const username = req.body.username;
     const password = req.body.password;
 
-    const foundUser = users.find(function(u){
-        if(u.username == username && u.password == password)
+    const foundUser = users.find(u => u.username == username && u.password == password) // find will return true or false, if true then throw the username and password to foundUser.
+        if(foundUser)
         {
             const token = generateTokens();
-            u.token = token;
+            foundUser.token = token;
             res.send({
                 token
             })
@@ -62,19 +62,13 @@ app.post("/signin", function(req, res){
     })
 
 
-})
-
 
 //Creating an authenticated end point (means request that goes only if user is signin)
 app.get("/me", function(req, res){
     const token = req.headers.token   //token is what user will send in the header along with a request
 
-    let foundUser = null;
-    users.find(function(u){
-        if(u.token === token)
-        {
-            foundUser = u;
-        }
+    const foundUser = users.find(function(u){
+        return u.token === token;    //find will return true or false, if true then it will throw the token to the foundUser
     })
     if(foundUser)
         {
