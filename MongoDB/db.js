@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema;     //mongoose exports a class called schema.
 const ObjectId = Schema.ObjectId;
 
 const User = new Schema({
     name: String, 
-    email: {type: String, unique: true},   //unique means, you cannot send the same email twice, nodejs will block this.
+    email: {type: String, unique: true},   //unique means, you cannot send the same email twice, DB will block this.
     password: String
 });
 

@@ -68,7 +68,7 @@ app.get("/me", function(req, res){
     const token = req.headers.token   //token is what user will send in the header along with a request
 
     const foundUser = users.find(function(u){
-        return u.token === token;    //find will return true or false, if true then it will throw the token to the foundUser
+        return u.token === token;    //find will return true or false, if true then it will throw the user's credentials to the foundUser
     })
     if(foundUser)
         {

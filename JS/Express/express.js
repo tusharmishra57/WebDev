@@ -1,4 +1,4 @@
-/// Create an in memory hospital
+/// Create an in-memory hospital
 //  You need to create 4 routes (4 things that hospital can do)
 //  l. GET - User can check how many kidneys they have and their health
 //  2. POST - User can add a new kidney
