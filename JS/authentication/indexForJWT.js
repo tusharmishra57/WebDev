@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "someRandomToken";
 const bcrypt = require("bcrypt");
+const {z} = require("zod");
 
 const app = express();
 
@@ -13,14 +14,37 @@ const users= [];
 
 
 app.post("/signup", async function(req, res){
+    
+    //Defining a Schema for Zod validation:
+    const requireBody = z.object({
+        email: z.string().min(3).max(100).email(),
+        username: z.string(),
+        password: z.string().min(3).max(100)
+    })
+
+    //parsing the defined schema to req.body
+    const parsedDataWithSuccess = requireBody.safeParse(req.body);  //safeParse will also give error in the form of an object
+
+    if(!parsedDataWithSuccess.success)
+    {
+        res.json({
+            message: "Incorrect Format",
+            error: parsedDataWithSuccess.error
+        })
+        return
+    }
+
+    const email = req.body.email;
     const username = req.body.username;
     const password = req.body.password;
 
+    
     const hashedPassword = await bcrypt.hash(password, 5);
 
     users.push({
         username: username,
-        password: hashedPassword
+        password: hashedPassword,
+        email: email
     })
 
     res.json({
