@@ -1,6 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "someRandomToken";
+const bcrypt = require("bcrypt");
 
 const app = express();
 
@@ -11,13 +12,15 @@ const users= [];
 //We don't need to create a getToken function
 
 
-app.post("/signup", function(req, res){
+app.post("/signup", async function(req, res){
     const username = req.body.username;
     const password = req.body.password;
 
+    const hashedPassword = await bcrypt.hash(password, 5);
+
     users.push({
         username: username,
-        password: password
+        password: hashedPassword
     })
 
     res.json({
@@ -26,17 +29,19 @@ app.post("/signup", function(req, res){
 })
 
 
-app.post("/signin", function(req, res){
+app.post("/signin", async function(req, res){
     const username = req.body.username;
     const password = req.body.password;
 
     const foundUser = users.find(function(u){
-        if(u.username == username && u.password == password)
+        if(u.username == username)
         {
             return true;
         }
     })
-        if(foundUser)
+
+    const passwordMatch = await bcrypt.compare(password, foundUser.password);
+        if(passwordMatch)
         {
             const token = jwt.sign({
                 username: username
