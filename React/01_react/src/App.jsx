@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Counter in React-
 
@@ -63,17 +63,19 @@ function Counter()
   // defining a state
   const [count, setCount] = useState(0);
 
-  setInterval({function ()
-  {
-    setCount(count + 1);
-  }}, 1000);
+  console.log("counter");
 
-  //defining a component
+  useEffect(function(){
+    setInterval(function(){
+      setCount(function(variable){
+        return variable+1;
+      });
+    }, 1000)
+    console.log("mounted")
+  }, []);      //[] is a dependency array, useEffect has two arguments
+
   return <div>
     <h1>{count}</h1>
-    <button onClick={increaseCount}>Increase Count</button>
-    <button onClick={decreaseCount}>Decrease Count</button>
-    <button onClick={resetCount}>Reset Count</button>
   </div>
 
   
