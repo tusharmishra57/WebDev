@@ -61,9 +61,9 @@ function App() {
 function Counter()
 {
   // defining a state
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);  //value of count is 0 only once, after that it will be according to state change because of useState hook.
 
-  console.log("counter");
+  console.log("counter"); //logs everytime state changes (re render).
 
   useEffect(function(){
     setInterval(function(){
@@ -71,9 +71,9 @@ function Counter()
         return variable+1;
       });
     }, 1000)
-    console.log("mounted")
   }, []);      //[] is a dependency array, useEffect has two arguments
 
+  
   return <div>
     <h1>{count}</h1>
   </div>
