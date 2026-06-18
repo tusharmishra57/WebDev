@@ -95,12 +95,15 @@ function App() {
     }, 5000)
   }, [])
   
-  return <div>
+  return (
+  <div>
     Hi there
     {counterVisible &&<Counter></Counter>}  {/*means counter will show only when counterVisible is true after every 5 sec */}
     Hello!!!!!
+
+    <ToggleMessage></ToggleMessage>
   </div>
-  
+  )
 }
 
 function Counter()
@@ -128,6 +131,24 @@ function Counter()
   return <div>
     <h1>{count}</h1>
   </div>
+}
+
+function ToggleMessage()
+{
+  let [hideIt, sethideIt] = useState(true);
+
+  function hide()
+  {
+    sethideIt(!hideIt);
+  }
+
+  return (
+    <div>
+      <button onClick = {hide}>HIDE</button>
+      {hideIt && <p>This is visible.....</p>}
+    </div>
+
+  )
 }
 
 export default App
