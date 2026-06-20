@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App()
 {
     return <div>
-        <BrowserRouter>
+        <BrowserRouter> 
 
         {/* we are using link instead of anchor tag because we want to make it a single page application */}
 
@@ -23,22 +23,45 @@ function App()
 
 function Component1()
 {
+  const navigate = useNavigate();  //useNavigate is a hook react provides to directly navigate to another route
+  
+  function redirectUser()
+  {
+    navigate("/")
+  }
+
     return <div>
         Hi there from 1st route
+
+        <button onClick = {redirectUser}>Go back to landing page</button>
+
     </div>
 }
 
 function Component2()
 {
+  const navigate = useNavigate();  //useNavigate is a hook react provides to directly navigate to another route
+  
+  function redirectUser()
+  {
+    navigate("/")
+  }
+
+
     return <div>
         Hi there from 2st route
+        <button onClick = {redirectUser}>Go back to landing page</button>
+
     </div>
 }
 
 function Component3()
 {
+
     return <div>
         Hi there from 3st route
+
+
     </div>
 }
 export default App;
