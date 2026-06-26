@@ -6,7 +6,14 @@ import './App.css'
 import {useFetch} from './hooks'
 function App() {
   const [currentPost, setCurrentPost] = useState(1);
-  const { data } = useFetch("https://jsonplaceholder.typicode.com/todos/" + currentPost);
+  const { data, loading } = useFetch("https://jsonplaceholder.typicode.com/todos/" + currentPost);
+
+  if(loading)
+  {
+    return <div>
+      LOADING......
+    </div>
+  }
 
   return <div>
     <button onClick = { () => setCurrentPost(1)}>Get data for 1</button><br/>
