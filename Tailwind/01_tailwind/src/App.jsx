@@ -5,20 +5,21 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
- return
- <>
+ return <>
    {/*Flex in tailwind */}
 
   <div className= "flex justify-around bg-yellow-500">
-  <div className = "bg-blue-300">class1</div>
-  <div className = "bg-green-300">class2</div>
-  <div className = "bg-red-300">class3</div>
- </div>
+    <div className = "bg-blue-300">class1</div>
+    <div className = "bg-green-300">class2</div>
+    <div className = "bg-red-300">class3</div>
+ </div>  
+ <br/> <br/>
 
-<div className= "flex justify-around bg-yellow-500">
-  <div className = "bg-blue-300">class1</div>
-  <div className = "bg-green-300">class2</div>
-  <div className = "bg-red-300">class3</div>
+   {/* Grids in tailwind */}
+  <div className= "grid grid-cols-12">  
+    <div className = "bg-blue-300  col-span-5">class1</div>   
+    <div className = "bg-green-300 col-span-5">class2</div>   
+    <div className = "bg-red-300 col-span-2">class3</div>     
  </div>
  </>
 }
