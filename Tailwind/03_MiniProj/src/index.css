@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+
+
+
+/* Define the variant selector */
+@variant dark (&:where(.dark, .dark *));
