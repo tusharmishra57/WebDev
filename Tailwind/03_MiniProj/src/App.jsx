@@ -1,16 +1,35 @@
+import { SideBarToggle } from "./icons/sideBarToggle"
+import {useState} from 'react'
 
 function App() {
+  const [sideBarOpen, setSideBarOpen] = useState(true);
+
   return <div className="flex">
-    <SideBar/>
+    <SideBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/>
     <Content/>
     </div>
 }
 
-function SideBar()
+function SideBar({sideBarOpen, setSideBarOpen})
 {
+  if(!sideBarOpen)
+  {
+    return <div className="bg-red-500 w-20 h-screen">
+      <div className="fixed left-0 top-0 hover:bg-slate-200" onClick={() => {setSideBarOpen(!sideBarOpen)}}>
+        <SideBarToggle />
+      </div>
+    </div>
+  }
   return <div className="bg-red-500 w-72 h-screen ">
+      <div className="fixed left-0 top-0 hover:bg-slate-200" onClick={() => {setSideBarOpen(!sideBarOpen)}}>
+        <SideBarToggle />
+      </div>
+      
+    </div>
 
-  </div>
+    
+  
+  
 }
 
 function Content()
