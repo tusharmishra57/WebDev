@@ -10,3 +10,5 @@ export function usePrev(value)
 
     return ref.current;  //this has the previous value
 }
+
+//return happens first then useEffect gets called
