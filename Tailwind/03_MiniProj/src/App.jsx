@@ -1,11 +1,15 @@
 import { Profile } from "./icons/profile";
+import {Home} from "./icons/home"
+import { Settings } from "./icons/settings"
 import { SideBarToggle } from "./icons/sideBarToggle"
 import {useState} from 'react'
+import { Billing } from "./icons/billing";
+import { Webinar } from "./icons/webinar";
 
 function App() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
 
-  return <div className="flex">
+  return <div className="flex font-serif">
     <SideBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/>
     <Content/>
     </div>
@@ -18,15 +22,56 @@ function SideBar({sideBarOpen, setSideBarOpen})
     return <div>
         <div className="fixed top-0 left-0 z-50 md:static transition-all duration-1000 w-0 md:w-10 bg-red-500 h-screen">
       <div className="cursor-pointer fixed left-0 top-0 hover:bg-slate-200" onClick={() => {setSideBarOpen(!sideBarOpen)}}>
-        <SideBarToggle />
+        <SideBarToggle />      
+
         </div>    
       </div>
+      
     </div>
     
   }
   return <div className="fixed top-0 left-0 z-50 w-48 md:static transition-all duration-1000 md:w-72 bg-red-500 h-screen">
       <div className="cursor-pointer fixed left-0 top-0 hover:bg-slate-200" onClick={() => {setSideBarOpen(!sideBarOpen)}}>
         <SideBarToggle />
+      </div> <br/><br/>
+      <div className= "">
+        <div className="flex justify-between hover:bg-indigo-100">
+          <div className="p-2 ">
+          HOME
+          </div>
+          <div className="p-2">
+            <Home/>
+          </div>
+        </div >
+
+        <div className="flex justify-between hover:bg-indigo-100">
+          <div className="p-2 ">
+            Webinar
+          </div>
+          <div className="p-2">
+            <Webinar/>
+          </div>
+        </div>
+        
+        <div className="flex justify-between hover:bg-indigo-100">
+          <div className="p-2 ">
+            Billings
+          </div>
+          <div className="p-2">
+            <Billing/>
+          </div>
+        </div>
+
+        <div className="flex justify-between hover:bg-indigo-100">
+          <div className="p-2 ">
+            Settings
+          </div>
+          <div className="p-2">
+            <Settings/>
+          </div>
+
+        </div>
+        
       </div>
       
     </div>
