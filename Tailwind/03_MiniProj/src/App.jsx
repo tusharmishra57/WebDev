@@ -108,7 +108,7 @@ function Content()
 
     </div>
 
-    <div className="bg-yellow-300 rounded-2xl md:col-span-3 h-96 shadow-lg col-span-10 grid grid-cols-2 grid-rows-2"> 
+    <div className="bg-yellow-300 rounded-2xl md:col-span-3 h-96 shadow-lg col-span-10 grid grid-cols-2 grid-rows-2 flex items-center justify-center"> 
       <div className="p-8 ">
         <div className="flex justify-center">
           <Calender/>
