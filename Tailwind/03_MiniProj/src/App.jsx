@@ -5,6 +5,9 @@ import { SideBarToggle } from "./icons/sideBarToggle"
 import {useState} from 'react'
 import { Billing } from "./icons/billing";
 import { Webinar } from "./icons/webinar";
+import { Calender } from "./icons/calender";
+import { Plus } from "./icons/plus";
+import { Recordings } from "./icons/recordings";
 
 function App() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
@@ -35,7 +38,7 @@ function SideBar({sideBarOpen, setSideBarOpen})
         <SideBarToggle />
       </div> <br/><br/>
       <div className= "">
-        <div className="flex justify-between hover:bg-indigo-100">
+        <div className="flex justify-between hover:bg-indigo-100 mt-4 mb-4">
           <div className="p-2 ">
           HOME
           </div>
@@ -44,7 +47,7 @@ function SideBar({sideBarOpen, setSideBarOpen})
           </div>
         </div >
 
-        <div className="flex justify-between hover:bg-indigo-100">
+        <div className="flex justify-between hover:bg-indigo-100 mt-4 mb-4">
           <div className="p-2 ">
             Webinar
           </div>
@@ -53,7 +56,7 @@ function SideBar({sideBarOpen, setSideBarOpen})
           </div>
         </div>
         
-        <div className="flex justify-between hover:bg-indigo-100">
+        <div className="flex justify-between hover:bg-indigo-100 mt-4 mb-4">
           <div className="p-2 ">
             Billings
           </div>
@@ -62,7 +65,7 @@ function SideBar({sideBarOpen, setSideBarOpen})
           </div>
         </div>
 
-        <div className="flex justify-between hover:bg-indigo-100">
+        <div className="flex justify-between hover:bg-indigo-100 mt-4 mb-4">
           <div className="p-2 ">
             Settings
           </div>
@@ -105,8 +108,33 @@ function Content()
 
     </div>
 
-    <div className="bg-yellow-300 rounded-2xl md:col-span-3 h-96 shadow-lg col-span-10"> 
+    <div className="bg-yellow-300 rounded-2xl md:col-span-3 h-96 shadow-lg col-span-10 grid grid-cols-2 grid-rows-2"> 
+      <div className="p-8 ">
+        <div className="flex justify-center">
+          <Calender/>
+        </div>
+        <div className="flex justify-center">
+          <p>Calender</p>
+        </div>
+      </div>
 
+      <div className="p-8 ">
+        <div className="flex justify-center">
+          <Plus/>
+        </div>
+        <div className="flex justify-center">
+          <p>Add a webinar</p>
+        </div>
+      </div>
+      
+      <div className="p-8 ">
+        <div className="flex justify-center">
+          <Recordings/>
+        </div>
+        <div className="flex justify-center">
+          <p>Old recordings</p>
+        </div>
+      </div>
     </div>
   </div>
     </div>
