@@ -9,6 +9,13 @@ wss.on("connection", function(socket){
     //if the client side browser like postman of any frontend sends a message, then it will log the message
     socket.on("message", (e) =>{
 
-        console.log(e.toString());
+        if(e.toString() === "ping")
+        {
+            socket.send("pong");
+        }
+        else
+        {
+            socket.send("please type ping");
+        }
     })
 })
